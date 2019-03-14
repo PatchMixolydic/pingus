@@ -21,6 +21,8 @@
 #include "pingus/pingu_action.hpp"
 
 namespace Actions {
+constexpr float ANGEL_WIGGLE_RATE = 60.0f;
+constexpr float ANGEL_ASCENSION_RATE = 50.0f * 0.025f;
 
 class Angel : public PinguAction
 {
