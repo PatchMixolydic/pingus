@@ -91,7 +91,8 @@ Exit::update ()
         // Now, make sure the pingu isn't already exiting, gone, or dead
         if (   (*pingu)->get_status() != Pingu::PS_EXITED
                && (*pingu)->get_status() != Pingu::PS_DEAD
-               && (*pingu)->get_action() != ActionName::EXITER)
+               && (*pingu)->get_action() != ActionName::EXITER
+               && (*pingu)->get_action() != ActionName::ANGEL)
         {
           // Pingu actually exits
           (*pingu)->set_action(ActionName::EXITER);
