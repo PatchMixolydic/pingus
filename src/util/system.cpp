@@ -298,7 +298,7 @@ System::find_userdir()
   char* appdata  = getenv("APPDATA");
   if (appdata)
   {
-    tmpstr = std::string(appdata) + "/Pingus-0.8/";
+    tmpstr = std::string(appdata) + "/Pingus-0.8-SKP/";
     for (size_t pos = tmpstr.find('\\', 0); pos != std::string::npos; pos = tmpstr.find('\\', 0))
       tmpstr[pos] = '/';
   }
@@ -314,7 +314,7 @@ System::find_userdir()
 
   if (homedir)
   {
-    return std::string(homedir) + "/Library/Application Support/pingus-0.8/";
+    return std::string(homedir) + "/Library/Application Support/pingus-0.8-skp/";
   }
   else
   {
@@ -341,7 +341,7 @@ System::find_userdir()
   }
 #endif
 
-  return (xdg::config().home() / "pingus-0.8/").string();
+  return (xdg::config().home() / "pingus-0.8-skp/").string();
 #endif
 }
 
