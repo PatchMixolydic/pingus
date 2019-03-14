@@ -1,6 +1,8 @@
 Pingus
 ======
 
+This is a modified copy of Pingus. The original can be found [here](https://gitlab.com/pingus/pingus).
+
 Introduction
 ------------
 

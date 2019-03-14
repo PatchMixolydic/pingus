@@ -2,6 +2,8 @@
 *~
 .*.swp
 .DS_Store
+.idea
+/cmake-build-*/
 /.sconf_temp
 /.sconsign.dblite
 /Pingus-*.dmg
