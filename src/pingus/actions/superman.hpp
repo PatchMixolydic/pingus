@@ -17,17 +17,20 @@
 #ifndef HEADER_PINGUS_PINGUS_ACTIONS_SUPERMAN_HPP
 #define HEADER_PINGUS_PINGUS_ACTIONS_SUPERMAN_HPP
 
-#include "engine/display/sprite.hpp"
+#include "pingus/state_sprite.hpp"
 #include "pingus/pingu_action.hpp"
 
 namespace Actions {
+
+constexpr float SUPERMAN_X_SPEED = 40.0f * 0.025f;
+constexpr float SUPERMAN_Y_SPEED = 200.0f * 0.025f;
 
 class Superman : public PinguAction
 {
 private:
   float counter;
   float x_pos;
-  Sprite sprite;
+  StateSprite sprite;
 
 public:
   Superman (Pingu*);

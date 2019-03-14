@@ -25,8 +25,12 @@ Superman::Superman (Pingu* p)
   : PinguAction(p),
     counter(0.0f),
     x_pos(pingu->get_x()),
-    sprite(Sprite("pingus/player" + pingu->get_owner_str() + "/superman"))
+    sprite()
 {
+    sprite.load(Direction::LEFT,  Sprite("pingus/player" +
+                                         pingu->get_owner_str() + "/superman/left"));
+    sprite.load(Direction::RIGHT, Sprite("pingus/player" +
+                                         pingu->get_owner_str() + "/superman/right"));
 }
 
 void
@@ -34,7 +38,7 @@ Superman::update ()
 {
   sprite.update();
   counter += 0.025f;
-  pingu->set_pos(pingu->get_x() + 40.0f * 0.025f, pingu->get_y() - 200.0f * 0.025f);
+  pingu->set_pos(pingu->get_x() + SUPERMAN_X_SPEED * pingu->direction, pingu->get_y() - SUPERMAN_Y_SPEED);
 
   if (pingu->get_y() < -32)
     pingu->set_status(Pingu::PS_DEAD);
@@ -43,7 +47,7 @@ Superman::update ()
 void
 Superman::draw (SceneContext& gc)
 {
-  gc.color().draw(sprite, pingu->get_pos ());
+  gc.color().draw(sprite[pingu->direction], pingu->get_pos());
 }
 
 } // namespace Actions
