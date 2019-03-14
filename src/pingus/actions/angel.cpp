@@ -26,8 +26,12 @@ Angel::Angel (Pingu* p)
   : PinguAction(p),
     counter(0.0),
     x_pos(pingu->get_x()),
-    sprite(Sprite("pingus/player" + pingu->get_owner_str() + "/angel"))
+    sprite()
 {
+    sprite.load(Direction::LEFT,  Sprite("pingus/player" +
+                                         pingu->get_owner_str() + "/angel/left"));
+    sprite.load(Direction::RIGHT, Sprite("pingus/player" +
+                                         pingu->get_owner_str() + "/angel/right"));
 }
 
 void
@@ -46,7 +50,7 @@ Angel::update ()
 void
 Angel::draw (SceneContext& gc)
 {
-  gc.color().draw (sprite, pingu->get_pos ());
+  gc.color().draw (sprite[pingu->direction], pingu->get_pos ());
 }
 
 } // namespace Actions

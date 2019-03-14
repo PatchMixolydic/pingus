@@ -17,7 +17,7 @@
 #ifndef HEADER_PINGUS_PINGUS_ACTIONS_ANGEL_HPP
 #define HEADER_PINGUS_PINGUS_ACTIONS_ANGEL_HPP
 
-#include "engine/display/sprite.hpp"
+#include "pingus/state_sprite.hpp"
 #include "pingus/pingu_action.hpp"
 
 namespace Actions {
@@ -29,7 +29,7 @@ class Angel : public PinguAction
 private:
   float counter;
   float x_pos;
-  Sprite sprite;
+  StateSprite sprite;
 
 public:
   Angel (Pingu* p);
