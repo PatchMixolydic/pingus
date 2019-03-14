@@ -59,7 +59,7 @@ ActionProperties::ActionProperties(EditorScreen* editor_, const Rect& rect_) :
     add_action(ActionName::LASERKILL);
     add_action(ActionName::SPLASHED);
     add_action(ActionName::SMASHED);
-    add_action(ActionName::TELEPORTED);
+    // add_action(ActionName::TELEPORTED); // crashes on use
     add_action(ActionName::WAITER);
     add_action(ActionName::WALKER);
   }
