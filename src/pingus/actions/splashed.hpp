@@ -24,8 +24,6 @@
 
 namespace Actions {
 
-constexpr float BECOME_ANGEL_CHANCE = 0.25;
-
 class Splashed : public PinguAction
 {
 private:

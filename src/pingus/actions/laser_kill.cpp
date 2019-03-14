@@ -39,7 +39,16 @@ void
 LaserKill::update ()
 {
   if (sprite[pingu->direction].is_finished())
-    pingu->set_status(Pingu::PS_DEAD);
+  {
+    if (rand_distribution(rng) >= BECOME_ANGEL_CHANCE)
+    {
+      pingu->set_status(Pingu::PS_DEAD);
+    }
+    else
+    {
+      pingu->set_action(ActionName::ANGEL);
+    }
+  }
   else
     sprite[pingu->direction].update();
 }

@@ -70,7 +70,7 @@ LaserExit::catch_pingu (Pingu* pingu)
     if (   pingu->get_x () < pos.x + 34 + 10 && pingu->get_x () > pos.x + 34
            && pingu->get_y () < pos.y + 43 + 20 && pingu->get_y () > pos.y + 43)
     {
-      if (pingu->get_action() != ActionName::LASERKILL)
+      if (!ActionName::is_invulnerable_action(pingu->get_action()))
       {
         killing = true;
         pingu->set_action(ActionName::LASERKILL);
