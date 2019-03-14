@@ -65,7 +65,7 @@ FakeExit::catch_pingu (Pingu* pingu)
   if (   pingu->get_pos().x > pos.x - 7  && pingu->get_pos().x < pos.x + 8
          && pingu->get_pos().y > pos.y - 56 && pingu->get_pos().y < pos.y)
   {
-    if (pingu->get_action() != ActionName::SPLASHED)
+    if (!ActionName::is_invulnerable_action(pingu->get_action()))
     {
       if (!smashing)
       {
