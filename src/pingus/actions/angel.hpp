@@ -39,6 +39,8 @@ public:
   void  update ();
   void  draw (SceneContext& gc);
 
+  bool catchable () { return false; }
+
 private:
   Angel (const Angel&);
   Angel& operator= (const Angel&);
