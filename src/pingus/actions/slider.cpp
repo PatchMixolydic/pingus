@@ -44,7 +44,6 @@ Slider::update ()
 
     if (rel_getpixel(0, -1) ==  Groundtype::GP_NOTHING)
     {
-      speed = (speed > 5) ? 5 : speed;
 
       pingu->set_velocity(pingu->get_velocity() + Vector3f(speed * pingu->direction, 0.0));
 
