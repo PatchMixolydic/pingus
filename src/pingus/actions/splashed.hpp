@@ -17,10 +17,14 @@
 #ifndef HEADER_PINGUS_PINGUS_ACTIONS_SPLASHED_HPP
 #define HEADER_PINGUS_PINGUS_ACTIONS_SPLASHED_HPP
 
+#include <random>
+
 #include "engine/display/sprite.hpp"
 #include "pingus/pingu_action.hpp"
 
 namespace Actions {
+
+constexpr float BECOME_ANGEL_CHANCE = 0.25;
 
 class Splashed : public PinguAction
 {
@@ -28,6 +32,9 @@ private:
   bool particle_thrown;
   bool sound_played;
   Sprite sprite;
+  std::random_device dev;
+  std::mt19937 rng{dev()};
+  std::uniform_real_distribution<float> rand_distribution{0, 1};
 
 public:
   Splashed (Pingu*);

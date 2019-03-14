@@ -43,9 +43,15 @@ Splashed::update ()
     WorldObj::get_world()->play_sound("splash", pingu->get_pos());
   }
 
-  if (sprite.is_finished())
-  {
-    pingu->set_status(Pingu::PS_DEAD);
+  if (sprite.is_finished()) {
+    if (rand_distribution(rng) >= BECOME_ANGEL_CHANCE)
+    {
+      pingu->set_status(Pingu::PS_DEAD);
+    }
+    else
+    {
+      pingu->set_action(ActionName::ANGEL);
+    }
   }
 }
 

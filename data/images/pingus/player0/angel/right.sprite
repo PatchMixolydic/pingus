@@ -1,0 +1,8 @@
+(pingus-sprite 
+  (image "../angel.png")
+  (offset -2 2)
+  (origin "bottom_center")
+  (speed 100)
+  (loop #t)
+  (array 4 1)
+  (size 46 30))
