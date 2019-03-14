@@ -55,14 +55,11 @@ Slider::update ()
         pingu->set_velocity(pingu->get_velocity() + Vector3f(-speed, 0.0));
       }
 
-      if (speed > 2)
+      if (speed > 4)
       {
-        pingu->set_action(ActionName::FALLER);
+        pingu->set_velocity(pingu->get_velocity() + Vector3f(9 * pingu->direction, 0.0));
       }
-      else
-      {
-        pingu->set_action(ActionName::FALLER);
-      }
+      pingu->set_action(ActionName::FALLER);
       return;
     }
   }
