@@ -64,7 +64,7 @@ Bomber::update ()
   Vector3f velocity = pingu->get_velocity();
 
   // Move the Pingu
-  mover.update(velocity, Colliders::PinguCollider(pingu_height));
+  mover.update(velocity, Colliders::PinguCollider(PINGU_HEIGHT));
 
   pingu->set_pos(mover.get_pos());
 
@@ -78,7 +78,7 @@ Bomber::update ()
 
   // If the Bomber hasn't 'exploded' yet and it has hit the ground too quickly
   if (sprite[pingu->direction].get_current_frame () <= 9 && rel_getpixel(0, -1) != Groundtype::GP_NOTHING
-      && velocity.y > deadly_velocity)
+      && velocity.y > DEADLY_VELOCITY)
   {
     pingu->set_action(ActionName::SPLASHED);
     return;

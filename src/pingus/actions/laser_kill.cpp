@@ -15,6 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pingus/actions/laser_kill.hpp"
+#include "pingus/pingu_enums.hpp"
 
 #include "engine/display/scene_context.hpp"
 #include "pingus/pingu.hpp"

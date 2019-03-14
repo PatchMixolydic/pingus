@@ -32,8 +32,6 @@ enum ActionType
   COUNTDOWN_TRIGGERED
 };
 
-constexpr float BECOME_ANGEL_CHANCE = 0.25; // for death actions
-
 /** This class provides an abstract interface for pingu actions. It is
     used to inherit classes which represent the actions. The actions
     are stored in a seperate library, have a look in actions/ for some

@@ -55,12 +55,19 @@ Slider::update ()
         pingu->set_velocity(pingu->get_velocity() + Vector3f(-speed, 0.0));
       }
 
-      pingu->set_action(ActionName::FALLER);
+      if (speed > 2)
+      {
+        pingu->set_action(ActionName::FALLER);
+      }
+      else
+      {
+        pingu->set_action(ActionName::FALLER);
+      }
       return;
     }
   }
 
-  speed -= 7 * 0.025f;
+  speed -= FRICTION_ACCEL;
   if (speed < 1)
   {
     pingu->set_action(ActionName::WALKER);

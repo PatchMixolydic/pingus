@@ -59,7 +59,7 @@ Faller::update ()
   }
 
   // FIXME: This should be triggered at a later point, when close to
-  // FIXME: deadly_velocity or something like that. A translation
+  // FIXME: DEADLY_VELOCITY or something like that. A translation
   // FIXME: animation for the floater might also help
   if (pingu->get_velocity().y > 5.0 && pingu->request_fall_action())
     return;
@@ -75,7 +75,7 @@ Faller::update ()
   Movers::LinearMover mover(WorldObj::get_world(), pingu->get_pos());
 
   // Move the Pingu as far is it can go
-  mover.update(move, Colliders::PinguCollider(pingu_height));
+  mover.update(move, Colliders::PinguCollider(PINGU_HEIGHT));
 
   pingu->set_pos(mover.get_pos());
 
@@ -112,9 +112,9 @@ Faller::update ()
         pingu->set_action(ActionName::DROWN);
       }
       // Did we stop too fast?
-      else if (Math::abs(pingu->get_velocity().y) > deadly_velocity)
+      else if (Math::abs(pingu->get_velocity().y) > DEADLY_VELOCITY)
       {
-        //log_info("Pingus splashed: " << pingu->get_velocity().y << " " << deadly_velocity);
+        //log_info("Pingus splashed: " << pingu->get_velocity().y << " " << DEADLY_VELOCITY);
         pingu->set_action(ActionName::SPLASHED);
       }
       else
@@ -153,8 +153,8 @@ bool
 Faller::is_tumbling () const
 {
   // If we are going fast enough to get smashed, start tumbling
-  return (Math::abs(pingu->get_velocity().x) > deadly_velocity
-          || Math::abs(pingu->get_velocity().y) > deadly_velocity);
+  return (Math::abs(pingu->get_velocity().x) > DEADLY_VELOCITY
+          || Math::abs(pingu->get_velocity().y) > DEADLY_VELOCITY);
 }
 
 bool

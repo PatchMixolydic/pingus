@@ -83,7 +83,7 @@ Basher::update ()
       // If the Basher has walked into something that it won't be able to
       // bash
       if (rel_getpixel(0, 0) == Groundtype::GP_SOLID
-          || rel_getpixel(0, pingu_height) == Groundtype::GP_SOLID)
+          || rel_getpixel(0, PINGU_HEIGHT) == Groundtype::GP_SOLID)
       {
         // Change direction and let walk code walk forward/up to get out.
         Sound::PingusSound::play_sound("chink");

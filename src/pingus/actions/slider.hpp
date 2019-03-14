@@ -22,6 +22,8 @@
 
 namespace Actions {
 
+constexpr float FRICTION_ACCEL = 7 * 0.025f;
+
 class Slider : public PinguAction
 {
 private:

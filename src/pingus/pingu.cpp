@@ -124,8 +124,8 @@ Pingu::set_velocity (const Vector3f& velocity_)
   velocity = velocity_;
 
   // crude terminal velocity
-  velocity.x = Math::clamp(-terminal_velocity, velocity.x, terminal_velocity);
-  velocity.y = Math::clamp(-terminal_velocity, velocity.y, terminal_velocity);
+  velocity.x = Math::clamp(-TERMINAL_VELOCITY, velocity.x, TERMINAL_VELOCITY);
+  velocity.y = Math::clamp(-TERMINAL_VELOCITY, velocity.y, TERMINAL_VELOCITY);
 }
 
 // Set the action of the pingu (bridger, blocker, bomber, etc.)

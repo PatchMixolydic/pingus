@@ -57,7 +57,7 @@ Miner::update ()
       pingu->set_action(ActionName::WALKER);
     }
     else if (rel_getpixel(0, -1) == Groundtype::GP_SOLID ||
-             rel_getpixel(0, pingu_height) == Groundtype::GP_SOLID)
+             rel_getpixel(0, PINGU_HEIGHT) == Groundtype::GP_SOLID)
     {
       // stop mining when hitting solid ground
       if (rel_getpixel(0, -1) == Groundtype::GP_SOLID)

@@ -66,7 +66,7 @@ PinguAction::get_persistent_char ()
 bool
 PinguAction::head_collision_on_walk (int x, int y)
 {
-  int pixel = rel_getpixel(x, y + pingu_height);
+  int pixel = rel_getpixel(x, y + PINGU_HEIGHT);
 
   if (pixel != Groundtype::GP_NOTHING && !(pixel & Groundtype::GP_BRIDGE))
     return true;
@@ -80,7 +80,7 @@ PinguAction::collision_on_walk (int x, int y)
   bool collision = false;
   int pixel = Groundtype::GP_NOTHING;
 
-  for (int pingu_y = 0; pingu_y <= pingu_height; ++pingu_y)
+  for (int pingu_y = 0; pingu_y <= PINGU_HEIGHT; ++pingu_y)
   {
     pixel = rel_getpixel(x, y + pingu_y);
 
@@ -124,7 +124,7 @@ PinguAction::move_with_forces ()
     {
       // FIXME: this shouldn't be really here, but its a
       // FIXME: quick&dirty way to kill falling pingus
-      if (velocity.y > Actions::Faller::deadly_velocity+1)
+      if (velocity.y > Actions::Faller::DEADLY_VELOCITY+1)
       {
         // log_debug("Velocity: %1%", velocity);
         pingu->set_action(Actions::Splashed);
@@ -234,7 +234,7 @@ PinguAction::move_with_forces ()
         {
           // FIXME: this shouldn't be really here, but its a
           // FIXME: quick&dirty way to kill falling pingus
-          if (resultant_force.y >= deadly_velocity)
+          if (resultant_force.y >= DEADLY_VELOCITY)
           {
             pingu->set_action(ActionName::SPLASHED);
             return;
