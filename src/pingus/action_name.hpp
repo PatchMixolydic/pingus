@@ -50,6 +50,16 @@ enum Enum
   WALKER
 };
 
+/** Actions during which a pingu can't be hurt by traps et al. */
+const Enum InvulnerableActions[] = {
+  ANGEL,
+  DROWN,
+  EXITER,
+  LASERKILL,
+  SMASHED,
+  SPLASHED
+};
+
 /** Converts a action enum into its internal string representation, as
     used in the xml or the resource files Bomber => "bomber" */
 std::string to_string(Enum action);
@@ -61,6 +71,9 @@ Enum from_string(const std::string& action);
 /** Convert a action enum into its visual representation, aka the
     thing that is seen on the screen for the user Bomber => "Bomber" */
 std::string to_screenname(Enum action);
+
+/** Check whether or not an action renders a pingu invulnerable to harm */
+bool is_invulnerable_action(Enum action);
 
 } // namespace ActionName
 

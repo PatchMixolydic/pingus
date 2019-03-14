@@ -82,7 +82,7 @@ Smasher::update ()
                                   pos.x + 250,
                                   pos.y + 190))
           {
-            if ((*pingu)->get_action() != ActionName::SPLASHED)
+            if (!ActionName::is_invulnerable_action((*pingu)->get_action()))
               (*pingu)->set_action(ActionName::SPLASHED);
           }
         }
@@ -134,7 +134,7 @@ Smasher::catch_pingu (Pingu* pingu)
           && pingu->get_pos().x > pos.x + 190
           && pingu->get_pos().x < pos.x + 210))
   {
-    if (pingu->get_action() != ActionName::SPLASHED)
+    if (!ActionName::is_invulnerable_action(pingu->get_action()))
     {
       if (!smashing)
       {

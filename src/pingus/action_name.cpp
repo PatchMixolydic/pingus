@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <algorithm>
 #include "action_name.hpp"
 
 #include "gettext.h"
@@ -106,6 +107,13 @@ Enum from_string(const std::string& action)
   if (action == "walker")         return WALKER;
 
   return WALKER;
+}
+
+bool is_invulnerable_action(Enum action)
+{
+  return
+    std::find(std::begin(InvulnerableActions), std::end(InvulnerableActions), action) !=
+    std::end(InvulnerableActions);
 }
 
 } // namespace ActionName
