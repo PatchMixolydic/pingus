@@ -22,6 +22,8 @@
 #include "editor/inputbox.hpp"
 #include "util/string_util.hpp"
 
+#include "pingus/globals.hpp"
+
 namespace Editor {
 
 /*
@@ -47,6 +49,20 @@ ActionProperties::ActionProperties(EditorScreen* editor_, const Rect& rect_) :
   add_action(ActionName::JUMPER);
   add_action(ActionName::MINER);
   add_action(ActionName::SLIDER);
+  if (globals::developer_mode) { // in developer mode, allow all actions
+    add_action(ActionName::ANGEL);
+    add_action(ActionName::BOARDER);
+    add_action(ActionName::SUPERMAN);
+    add_action(ActionName::DROWN);
+    add_action(ActionName::EXITER);
+    add_action(ActionName::FALLER);
+    add_action(ActionName::LASERKILL);
+    add_action(ActionName::SPLASHED);
+    add_action(ActionName::SMASHED);
+    add_action(ActionName::TELEPORTED);
+    add_action(ActionName::WAITER);
+    add_action(ActionName::WALKER);
+  }
 }
 
 ActionProperties::~ActionProperties()
