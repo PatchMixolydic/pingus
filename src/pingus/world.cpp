@@ -225,7 +225,10 @@ World::get_time()
 void
 World::armageddon(void)
 {
-  Sound::PingusSound::play_sound("goodidea");
+  if (!do_armageddon)
+  {
+    Sound::PingusSound::play_sound("goodidea");
+  }
   do_armageddon = true;
   armageddon_count = 0;
 }
